@@ -1,0 +1,36 @@
+<div>
+	<form ng-controller="myCtrl">
+		<div>
+			<label>Event Name</label>
+			<input type="text", ng-model="event.name"/>
+		</div>
+		<div>
+			Venue<input type="text", ng-model="event.venue"/>
+		</div>
+		<div>
+			City<inupt type="text", ng-model="city.city"/>
+		</div>
+		<div>
+			Artist Name<inupt type="text", ng-model="artist.name"/>
+		</div>
+		<div>
+			Facebook Url<inupt type="text", ng-model="artist.facebook_url"/>
+		</div>
+		<div>
+			Cost<inupt type="text", ng-model="show.cost"/>
+		</div>
+		<div>
+			Price<inupt type="text", ng-model="show.price"/>
+		</div>
+		<div>
+			Duration<input type="text", ng-model="show.duration"/>
+		</div>
+		<div>
+			Start Date<input type="date", ng-model="show.startdate">
+		</div>
+		<date>
+			End Date<input type="date", ng-model="show.enddate">
+		</date>
+		<button type="submit" ng-click="add()">Save</button><br>
+	</form>
+</div>

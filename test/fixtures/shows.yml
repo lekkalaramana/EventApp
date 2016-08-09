@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 1
+  cost: MyString
+  price: MyString
+  duration: 1
+  startdate: 2016-08-09
+  enddate: 2016-08-09
+
+two:
+  event_id: 1
+  cost: MyString
+  price: MyString
+  duration: 1
+  startdate: 2016-08-09
+  enddate: 2016-08-09

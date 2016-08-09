@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EventApp</title>
+  <script src="javascripts/angular.min.js"></script>
+  <script src="javascripts/angular-route.min.js"></script>
+  <script src="javascripts/app.js"></script>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="myEventApp">
+
+<div>
+	<form ng-controller="myCtrl">
+		<div>
+			<label>Event Name</label>
+			<input type="text", ng-model="event.name"/>
+		</div>
+		<div>
+			Venue<input type="text", ng-model="event.venue"/>
+		</div>
+		<div>
+			City<input type="text", ng-model="event.city.name"/>
+		</div>
+		<div>
+			Artist Name<input type="text", ng-model="event.artist.name"/>
+		</div>
+		<div>
+			Facebook Url<input type="text", ng-model="event.artist.facebook_url"/>
+		</div>
+		<div>
+			Cost<input type="text", ng-model="event.show.cost"/>
+		</div>
+		<div>
+			Price<input type="text", ng-model="event.show.price"/>
+		</div>
+		<div>
+			Duration<input type="text", ng-model="event.show.duration"/>
+		</div>
+		<div>
+			Start Date<input type="date", ng-model="event.show.startdate">
+		</div>
+		<date>
+			End Date<input type="date", ng-model="event.show.enddate">
+		</date><br>
+		<button type="submit" ng-click="add()">Save</button>
+	</form>
+</div>
+
+</body>
+</html>
