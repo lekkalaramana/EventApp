@@ -6,7 +6,11 @@ gem 'rails', '4.0.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
 
+# Use pry as debugger
 gem 'pry', :group => :development
+
+# Use rails_admin , that provides an easy-to-use interface for managing your data.
+gem 'rails_admin'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

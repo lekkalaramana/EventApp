@@ -1,4 +1,5 @@
 EventApp::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get "event/index"
   get "event/create"
   match "/create"=> "event#create", via: :post

@@ -1,6 +1,6 @@
 var app = angular.module("myEventApp",['ngRoute']);
 app.controller("myCtrl", function($scope, $http, $window){
-	$scope.add = function () { 
+	$scope.add = function() { 
 		var url = window.location.origin
 		$http({
 			method: 'POST',
