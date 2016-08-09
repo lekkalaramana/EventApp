@@ -4,9 +4,9 @@ class EventController < ApplicationController
   end
 
   def create
-  	# binding.pry
+  	# return_data = {message: "Successfully saved", errors:[]}
   	city = City.create_or_update(params[:city])
-  	status,event=Event.create_or_update(params[:event])
+  	event=Event.create_or_update(params[:event])
   	artist = Artist.create(params[:artist])
   	eventArtist = EventArtist.create(params[:event])
   	show = Show.create(params[:show])

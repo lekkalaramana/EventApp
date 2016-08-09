@@ -1,11 +1,11 @@
 class Event < ActiveRecord::Base
-	belongs_to :city, :foreign_key =>'city_id', :class_name => 'City'
-	has_many :shows, :foreign_key =>'event_id', :class_name => 'Show'
+	belongs_to :city
+	has_many :shows
+	has_many :event_artists
 	has_many :artists, through: :event_artists
 
 
 	def self.create_or_update params
 		event = Event.create(city_id: City.last.id, name: params[:name], venue: params[:venue])
-		[event.save, event]
 	end
 end
