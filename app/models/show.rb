@@ -1,7 +1,12 @@
 class Show < ActiveRecord::Base
 	belongs_to :event
 
-	def self.create params
-		show = Show.create!(event_id:Event.last.id, cost: params[:cost], price: params[:price], duration: params[:duration], startdate: params[:startdate], enddate: params[:enddate])
+
+	def self.create_or_update params
+		show = self.where(event_id: params[:event_id]).first_or_create
+		params.stringify_keys!
+		params.permit!
+		show.attributes = params
+		[show.save, show]
 	end
 end

@@ -5,7 +5,21 @@ class Event < ActiveRecord::Base
 	has_many :artists, through: :event_artists
 
 
+	# rails_admin do
+ #      		edit do
+ #      			field :city do
+      				
+ #      			end
+ #      			field:shows
+ #      			field:artists
+ #      		end
+ #  	end
+
 	def self.create_or_update params
-		event = Event.create(city_id: City.last.id, name: params[:name], venue: params[:venue])
+		event = self.where(name: params[:name]).first_or_create
+		params.stringify_keys!
+		params.permit!
+		event.attributes = params
+		[event.save, event]
 	end
 end
