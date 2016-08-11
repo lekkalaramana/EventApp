@@ -14,10 +14,20 @@ RailsAdmin.config do |config|
   ## == Pundit ==
   # config.authorize_with :pundit
 
+  # config.model City do
+  #   edit do
+  #     configure :events do
+  #       nested_form[:update_only] = false
+  #     end
+  #   end
+  # end
+
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
+  # config.included_models = [ Event, Artist, City, Show ]
+  config.excluded_models << "EventArtist"
 
   config.actions do
     dashboard                     # mandatory
