@@ -5,10 +5,13 @@ class EventController < ApplicationController
 
   def create
   	# return_data = {message: "Successfully saved", errors:[]}
-  	city = City.create_or_update(params[:city])
-  	event=Event.create_or_update(params[:event])
-  	artist = Artist.create(params[:artist])
-  	eventArtist = EventArtist.create(params[:event])
-  	show = Show.create(params[:show])
+  	status, city = City.create_or_update(params[:city])
+    event_info = params[:event].merge({city_id: city.id})
+  	status, event=Event.create_or_update(event_info)
+  	status, artist = Artist.create_or_update(params[:artist])
+    eventArtist_info = {event_id: event.id, artist_id: artist.id}
+  	status, eventArtist = EventArtist.create_or_update(eventArtist_info)
+  	show_info = params[:show].merge({event_id: event.id})
+    status, show = Show.create_or_update(show_info)
   end
 end
